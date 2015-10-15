@@ -1,10 +1,10 @@
 // Karma configuration
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -23,6 +23,8 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
 
+    autoWatch: true,
+
     // enable / disable colors in the output (reporters and logs)
     colors: true,
 
@@ -30,19 +32,14 @@ module.exports = function(config) {
     files: [],
 
     jspm: {
-      // Edit this to your needs
       config: 'client/config.js',
       loadFiles: ['client/app/**/*.spec.ts'],
-      serveFiles: [
-        'client/app/**/*.ts',
-        'client/app/**/*.html',
-        'client/app/**/*.css'
-      ]
+      serveFiles: ['client/app/**/*'],
+      packages: "client/jspm_packages/"
     },
 
     proxies: {
-      // '/jspm_packages': '/base/jspm_packages',
-      // '/jspm.config.js': '/base/jspm.config.js'
+      '/base/jspm_packages/': '/base/client/jspm_packages/'
     },
 
     // list of files to exclude

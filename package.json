@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "test": "karma start",
-    "postinstall": "jspm install & tsd install"
+    "postinstall": "jspm install & tsd reinstall -s -o"
   },
   "keywords": [
     "angular",

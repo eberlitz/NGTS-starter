@@ -1,5 +1,4 @@
 System.config({
-  baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "typescript",
   typescriptOptions: {
@@ -12,6 +11,17 @@ System.config({
 
   packages: {
     "app": {
+      "main": "app",
+      "defaultExtension": "ts",
+      "meta": {
+        "*.ts": {
+          "loader": "ts"
+        }
+      }
+    },
+    
+    // This section is just for runing tests with karma
+    "client/app": {
       "main": "app",
       "defaultExtension": "ts",
       "meta": {

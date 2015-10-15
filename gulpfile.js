@@ -56,8 +56,8 @@ gulp.task('serve', function () {
 			baseDir: root,
 			// serve our jspm dependencies with the client folder
 			routes: {
-				//'/jspm.config.js': './jspm.config.js',
-				'/jspm_packages': './jspm_packages'
+				//'/jspm.conf.js': './jspm.conf.js',
+				//'/jspm_packages': './jspm_packages'
 			}
 		},
 	});

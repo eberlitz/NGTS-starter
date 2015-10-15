@@ -5,9 +5,8 @@ import "angular-ui-router";
 import AppComponent from './app.component';
 
 let appModule = angular.module("app", [
-	
-])
-	.directive('app', AppComponent);
+	'ui.router',
+]).directive('app', AppComponent);
 
 
 /*
