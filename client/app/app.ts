@@ -8,20 +8,17 @@ let appModule = angular.module("app", [
 	'ui.router',
 ]).directive('app', AppComponent);
 
-
 /*
  * As we are using ES6 with Angular 1.x we can't use ng-app directive
  * to bootstrap the application as modules are loaded asynchronously.
  * Instead, we need to bootstrap the application manually
  */
-var container;
+var container = document.getElementById('app-container');
 var noAngularDOM;
 
 // Angular Bootstrap
 angular.element(document).ready(() => {
-	container = document.getElementById('app-container');
-	if (location.origin.match(/localhost/) && window.System) {
-		window.System.trace = true;
+	if (window.System && window.System.trace) {
 		noAngularDOM = container.cloneNode(true);
 		if ((!window.System.hotReloader)) {
 			window.System.import('capaj/jspm-hot-reloader').then(HotReloader => {
