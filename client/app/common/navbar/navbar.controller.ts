@@ -1,5 +1,5 @@
 class NavbarController {
-	constructor(){
+	constructor() {
 		this.name = 'navbar';
 	}
 }

@@ -1,7 +1,7 @@
 class HeroController {
 	name: string;
-	
-	constructor(){
+
+	constructor() {
 		this.name = 'hero';
 	}
 }

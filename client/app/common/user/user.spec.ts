@@ -6,8 +6,8 @@ import UserModule from './user';
 import UserFactory from './user.factory';
 import test from './user-test';
 
-describe('User', ()=>{
-  it('should run this test', ()=> {
+describe('User', () => {
+  it('should run this test', () => {
     expect(4).to.equal(4);
   });
 

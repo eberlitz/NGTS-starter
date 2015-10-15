@@ -67,9 +67,9 @@ gulp.task('serve', function () {
 
 gulp.task('build', function () {
 	var dist = path.join(paths.dist + 'app.js');
-	
+
 	return builder.buildStatic('app/app.ts', dist, {
-		minify: false, 
+		minify: false,
 		mangle: false,
 	})
 	
@@ -79,7 +79,7 @@ gulp.task('build', function () {
 			// Also create a fully annotated minified copy
 			return gulp.src(dist)
 				.pipe(ngAnnotate())
-				//.pipe(uglify())
+			//.pipe(uglify())
 				.pipe(rename('app.min.js'))
 				.pipe(gulp.dest(paths.dist))
 		})
@@ -93,7 +93,20 @@ gulp.task('build', function () {
 		});
 });
 
+gulp.task('check:tslint', function () {
+	var tslint = require('gulp-tslint');
+	var directory = path.join(root, 'app');
+	var configuration = path.join(__dirname, 'tslint.json');
+	return gulp.src([
+		path.join(directory, '**', '*.ts'),
+		path.join('!', directory, 'references.ts')
+	]).pipe(tslint({
+		configuration: require(configuration)
+	})).pipe(tslint.report('prose',{
+		emitError: false
+	}));
+});
 
-
+gulp.task('check', ['check:tslint']);
 
 gulp.task('default', ['serve'])

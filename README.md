@@ -44,10 +44,14 @@ npm i -g jspm gulp tsd karma-cli
 This project uses Gulp to build and start the dev environment. After you have installed all dependencies you can now run the app.
 Run `gulp` to start a dev server and watch all files. The port will displayed to you.
 
-### Testing
+## Testing
 
 To run test, just run `npm test` or `karma start`.
 
 The only difference from a regular `Karma` setup is the use of [`karma-jspm`](https://github.com/Workiva/karma-jspm) plugin to let JSPM handle spec files as modules. `Karma` will run all files that match `.spec.ts` inside the `app` folder. This is awesome because we can write tests for our components in the same folder with the rest of the component. Be sure to include your `spec` files in the appropriate component directory. You must name the spec file like so, `[name].spec.ts`. If you don't want to use the `.spec.ts` extension, you must change the `jspm.loadFiles` glob in `karma.conf.js` to look for whatever file(s) you want.
 
 `Mocha` is the testing suite being used and `chai` is the assertion library. If you would like to change this, do so in `karma.conf.js`.
+
+## Checking for TypeScript coding 
+
+Run `gulp check` to have a report of the `gulp-tslint`. It uses the config file `tsconfig.json`.
