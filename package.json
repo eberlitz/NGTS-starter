@@ -1,0 +1,59 @@
+{
+  "name": "ngts-starter",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "karma start",
+    "postinstall": "jspm install & tsd install"
+  },
+  "keywords": [
+    "angular",
+    "jspm",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Eduardo Eidelwein Berlitz",
+    "email": "eberlitz@gmail.com",
+    "url": "http://eberlitz.github.io"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "client"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.7",
+      "angular-mocks": "github:angular/bower-angular-mocks@^1.4.7",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "css": "github:systemjs/plugin-css@^0.1.18",
+      "text": "github:systemjs/plugin-text@^0.0.2",
+      "ts": "github:frankwallis/plugin-typescript@^2.0.17"
+    },
+    "devDependencies": {
+      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.1.4",
+      "clean-css": "npm:clean-css@^3.4.6",
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "chai": "^3.3.0",
+    "chokidar-socket-emitter": "^0.1.1",
+    "gulp": "^3.9.0",
+    "gulp-html-replace": "^1.5.4",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^3.0.0",
+    "gulp-uglify": "^1.4.2",
+    "jspm": "^0.16.12",
+    "karma": "^0.13.11",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jspm": "^2.0.1",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "mocha": "^2.3.3",
+    "path": "^0.12.7",
+    "systemjs-builder": "^0.14.8",
+    "yargs": "^3.27.0"
+  }
+}
